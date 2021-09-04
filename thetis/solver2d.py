@@ -556,7 +556,7 @@ class FlowSolver2d(FrozenClass):
         elif label[:-3] in self.bnd_functions:
             bcs = self.bnd_functions[label[:-3]]
         return integrator(self.equations[label], solution or self.fields[label], fields, self.dt,
-                          self.options.tracer_timestepper_options, bcs, create_solver=create_solver)
+                          self.options.tracer_timestepper_options, bcs, create_solver=create_solver)  # FIXME: Not everyone has create_solver
 
     def get_sediment_timestepper(self, integrator):
         """
